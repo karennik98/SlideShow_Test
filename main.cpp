@@ -13,11 +13,11 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    CommandParser parser("add_rect -center (2,3) -size (20,30)");
+    CommandParser parser("add_rect -center (2,3) -size (20,30) -id (32)");
     QVector<Token> tokens { parser.parse() };
 
     CommandBuilder bld(tokens);
-    std::unique_ptr<ICommand> cmd = bld.build();
+    ICommand* cmd = bld.build();
 
     for(const auto el : tokens)
     {

@@ -3,6 +3,7 @@
 
 #include "token.h"
 #include "basic_types.h"
+#include "declarations.h"
 
 #include <QVector>
 #include <QPair>
@@ -39,8 +40,9 @@ public:
    ICommand* build();
 private:
     CommandType getCommandType() const;
-    QPair<Position, Dimension> getAddRectCommandArgs();
+    std::tuple<Position, Dimension, ID> getAddRectCommandArgs();
     QPair<int, int> getIntegerValues();
+    ID getIDValue();
 
     bool isCommandType() const;
 

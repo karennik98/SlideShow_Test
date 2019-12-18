@@ -31,4 +31,5 @@ HEADERS += \
     commandbuilder.h \
     commandparser.h \
     commands.h \
+    declarations.h \
     token.h
